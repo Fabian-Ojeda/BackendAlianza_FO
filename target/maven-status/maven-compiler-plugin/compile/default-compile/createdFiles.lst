@@ -1,0 +1,11 @@
+org\alianza\backendalianza_fo\configuration\ConfigAccess$1.class
+org\alianza\backendalianza_fo\service\implementation\ClientService.class
+org\alianza\backendalianza_fo\controller\ClientController.class
+org\alianza\backendalianza_fo\configuration\ConfigAccess.class
+org\alianza\backendalianza_fo\dto\MessageDto.class
+org\alianza\backendalianza_fo\mapper\ClientMapper.class
+org\alianza\backendalianza_fo\BackendAlianzaFoApplication.class
+org\alianza\backendalianza_fo\service\IClientService.class
+org\alianza\backendalianza_fo\jpa\repository\ClientRepository.class
+org\alianza\backendalianza_fo\dto\ClientDto.class
+org\alianza\backendalianza_fo\jpa\entity\ClientEntity.class
