@@ -1,0 +1,10 @@
+E:\Programacion\Prueba tecnica GML\Backend\BackendAlianza_FO\src\main\java\org\alianza\backendalianza_fo\BackendAlianzaFoApplication.java
+E:\Programacion\Prueba tecnica GML\Backend\BackendAlianza_FO\src\main\java\org\alianza\backendalianza_fo\configuration\ConfigAccess.java
+E:\Programacion\Prueba tecnica GML\Backend\BackendAlianza_FO\src\main\java\org\alianza\backendalianza_fo\controller\ClientController.java
+E:\Programacion\Prueba tecnica GML\Backend\BackendAlianza_FO\src\main\java\org\alianza\backendalianza_fo\dto\ClientDto.java
+E:\Programacion\Prueba tecnica GML\Backend\BackendAlianza_FO\src\main\java\org\alianza\backendalianza_fo\dto\MessageDto.java
+E:\Programacion\Prueba tecnica GML\Backend\BackendAlianza_FO\src\main\java\org\alianza\backendalianza_fo\jpa\entity\ClientEntity.java
+E:\Programacion\Prueba tecnica GML\Backend\BackendAlianza_FO\src\main\java\org\alianza\backendalianza_fo\jpa\repository\ClientRepository.java
+E:\Programacion\Prueba tecnica GML\Backend\BackendAlianza_FO\src\main\java\org\alianza\backendalianza_fo\mapper\ClientMapper.java
+E:\Programacion\Prueba tecnica GML\Backend\BackendAlianza_FO\src\main\java\org\alianza\backendalianza_fo\service\IClientService.java
+E:\Programacion\Prueba tecnica GML\Backend\BackendAlianza_FO\src\main\java\org\alianza\backendalianza_fo\service\implementation\ClientService.java
