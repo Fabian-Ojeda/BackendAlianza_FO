@@ -6,7 +6,9 @@ import org.alianza.backendalianza_fo.dto.MessageDto;
 import org.alianza.backendalianza_fo.service.IClientService;
 import org.alianza.backendalianza_fo.utilities.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -59,6 +61,18 @@ public class ClientController {
     @PostMapping(value=Constants.PATH_CREATE_CLIENTS, consumes = "application/json", produces = "application/json")
     public ResponseEntity<MessageDto> create(@RequestBody ClientDto clientDto) throws ParseException {
         return new ResponseEntity<>(clientService.createClient(clientDto), HttpStatus.OK);
+    }
+    /**
+     * Generates a CSV File.
+     */
+    @GetMapping(Constants.PATH_GENERATE_CSV_FILE)
+    public ResponseEntity<byte[]> exportCSV() {
+        byte[] csvBytes = clientService.exportCSV();
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.APPLICATION_OCTET_STREAM);
+        headers.set(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=clientes.csv");
+        headers.setContentLength(csvBytes.length);
+        return new ResponseEntity<>(csvBytes, HttpStatus.OK);
     }
 
 }

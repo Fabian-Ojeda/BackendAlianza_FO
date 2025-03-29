@@ -37,4 +37,9 @@ public interface IClientService {
      * @throws ParseException if any error occurs while parsing data.
      */
     public MessageDto createClient(ClientDto clientDto) throws ParseException;
+
+    /**
+     * Generates a file CSV with the information about CLients
+     */
+    public byte[] exportCSV();
 }

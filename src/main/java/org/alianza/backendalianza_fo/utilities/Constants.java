@@ -20,6 +20,9 @@ public class Constants {
     // Path to create a new client
     public static final String PATH_CREATE_CLIENTS = "/create";
 
+    // Path to generate a CSV file
+    public static final String PATH_GENERATE_CSV_FILE = "/generateCSVFile";
+
     // Success message when a client is created
     public static final String MESSAGE_CLIENT_CREATED_SUCCESFULL = "Client created successfully";
 
@@ -37,4 +40,7 @@ public class Constants {
     // Log message when a user is created
     public static final String LOG_USER_CREATED =
             "An user was created with id %d";
+
+    //Log message when a file CSV will be generated
+    public static final String LOG_FILE_CSV_GENERATED = "A File CSV will be generated";
 }

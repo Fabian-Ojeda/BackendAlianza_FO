@@ -1,5 +1,6 @@
 package org.alianza.backendalianza_fo.service.implementation;
 
+import com.opencsv.CSVWriter;
 import lombok.extern.slf4j.Slf4j;
 import org.alianza.backendalianza_fo.dto.ClientDto;
 import org.alianza.backendalianza_fo.dto.MessageDto;
@@ -10,6 +11,9 @@ import org.alianza.backendalianza_fo.utilities.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.OutputStreamWriter;
 import java.text.ParseException;
 import java.util.List;
 
@@ -123,5 +127,32 @@ public class ClientService implements IClientService {
         clientEntity.setDataStart(clientDto.getDataStart());
         clientEntity.setDataFinish(clientDto.getDataFinish());
         return clientEntity;
+    }
+
+    /**
+     * Generates a file CSV with the information about CLients
+     */
+    public byte[] exportCSV(){
+        log.info(Constants.LOG_FILE_CSV_GENERATED);
+        List<ClientDto> listEntities = this.getAllClients();
+
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+
+        try (CSVWriter writer = new CSVWriter(new OutputStreamWriter(outputStream))) {
+            writer.writeNext(new String[] {"Shared Key", "Business ID", "Email", "Phone", "Data Added" });
+
+            for (ClientDto client : listEntities) {
+                writer.writeNext(new String[] {
+                        client.getSharedKey(),
+                        client.getBusinessId(),
+                        client.getEmail(),
+                        client.getPhone(),
+                        client.getDataStart().toString()
+                });
+            }
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        return outputStream.toByteArray();
     }
 }
